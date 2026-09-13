@@ -34,10 +34,11 @@ Honor an explicit diagram type. If the user only says “画个图”, state the
 
 ## Tool selection
 
-- Default: `generate_diagram` with `{ "prompt": "<optimized prompt>" }`.
+- Prefer the live-discovered `generate_chart` with `{ "prompt": "<optimized prompt>" }` when it is available because it returns an image URL and an editable ProcessOn source-file URL.
+- If `generate_chart` is not present in the current `tools/list`, fall back to the page-documented `generate_diagram` with the same prompt-only input.
 - Use `generate_diagram_dsl` when the user explicitly asks for DSL, wants auditable/reusable structure, or generation needs structural debugging.
 - Do not invent MCP parameters. The current tools accept only `prompt`.
-- If both visual output and DSL are required, call `generate_diagram_dsl` first, then `generate_diagram` only when the first result does not already provide an accessible visual result.
+- If both visual output and DSL are required, call `generate_diagram_dsl` first, then prefer `generate_chart` and fall back to `generate_diagram` only when the DSL result does not already provide an accessible visual result.
 
 ## Authentication and safety
 
