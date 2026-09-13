@@ -38,7 +38,7 @@ Honor an explicit family unless it cannot represent the requested relationship. 
 - **Flowchart:** use one start and at least one explicit end; decisions are questions with labeled outcomes; do not hide error paths in prose.
 - **Swimlane:** each action belongs to exactly one accountable lane; show handoffs at lane boundaries; avoid a lane per individual unless required.
 - **Sequence:** time runs top to bottom; distinguish synchronous calls, asynchronous messages, replies, loops, and alternatives.
-- **Architecture:** show runtime or deployment boundaries, dependencies, protocols, trust zones, data/control direction, resilience, and observability where relevant. Never substitute a directory tree.
+- **Architecture:** default to an architecture block diagram with large labeled components inside explicit layers or boundaries. Show runtime or deployment boundaries, dependencies, protocols, trust zones, data/control direction, resilience, and observability where relevant. Do not use UML class tables, attribute rows, method compartments, or placeholder field types unless the user explicitly requests a class diagram. Never substitute a directory tree.
 - **ER:** include only decision-relevant fields; mark primary and foreign keys; label one-to-one, one-to-many, or many-to-many cardinality and optionality.
 - **UML:** choose one view that answers the question; do not mix class, state, use-case, and sequence notation on one canvas.
 - **Organization/equity:** separate reporting, ownership, governance, and collaboration relations; label ambiguous edges.
