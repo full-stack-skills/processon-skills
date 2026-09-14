@@ -14,14 +14,18 @@ Direct requests that fit:
 - "First time using ProcessOn, help me finish setup."
 - "ProcessOn says the credential is missing, open the configuration page."
 - "My ProcessOn Token expired, help me rotate it."
+- “第一次使用 ProcessOn，帮我完成本地设置。”
+- “ProcessOn 提示缺少凭据，帮我打开配置页。”
+- “我的 ProcessOn Token 已失效，帮我安全更换。”
 
 Execute in this order:
 
 1. From the installed plugin root run `python3 scripts/processon_setup.py check` and decide only by the result.
-2. On first use, or whenever `PROCESSON_SETUP_REQUIRED` or `PROCESSON_AUTH_REQUIRED` is returned, run `python3 scripts/processon_setup.py ui`.
-3. Tell the user to paste the Token only into the local page's password field and click "Save Token".
-4. After a successful save, ask the user to reopen Codex, then retry the original diagram request.
-5. Run `initialize` and `tools/list` for a non-generation validation; do not probe the credential with a generation call.
+2. On first use, or whenever `PROCESSON_SETUP_REQUIRED` or `PROCESSON_AUTH_REQUIRED` is returned, wait for the MCP proxy to open the local page automatically. It opens at most once per 10-minute cooldown.
+3. Only if the browser does not open, run `python3 scripts/processon_setup.py ui` as the manual fallback.
+4. Tell the user to paste the Token only into the local page's password field and click "Save Token".
+5. After a successful save, retry the original request; reopen Codex only if the current MCP process does not reload the credential.
+6. Run `initialize` and `tools/list` for a non-generation validation; do not probe the credential with a generation call.
 
 Read [setup workflow](references/workflow.md) when you need to execute commands or interpret state. Read [security boundary](references/security.md) for credential invalidation, rotation, or safety questions.
 
@@ -29,9 +33,9 @@ Read [setup workflow](references/workflow.md) when you need to execute commands 
 
 | State | Detection | Action | Output |
 |---|---|---|---|
-| First use (首次使用) | `check` returns missing | Open the local setup page | Three-step guide, do not request the Token |
-| Missing credential (缺少凭证) | `PROCESSON_SETUP_REQUIRED` | Open the local setup page | State that Codex must be reopened after saving |
-| Invalid credential (凭证失效) | `PROCESSON_AUTH_REQUIRED` | Enter the rotation flow | Do not repeat the upstream response |
+| First use (首次使用) | `check` returns missing | Proxy auto-opens the local setup page | Three-step guide, do not request the Token |
+| Missing credential (缺少凭证) | `PROCESSON_SETUP_REQUIRED` | Use the auto-opened page; manual `ui` only as fallback | Retry after saving |
+| Invalid credential (凭证失效) | `PROCESSON_AUTH_REQUIRED` | Proxy auto-opens the same page for rotation | Do not repeat the upstream response |
 | Rotate Token (轮换 Token) | User explicitly asks to update | Reopen the setup page and overwrite the user-level credential | Confirm only the save state |
 | Already configured | `check` returns configured | Continue with non-destructive MCP validation | Report availability only |
 
@@ -81,7 +85,7 @@ See [anti-patterns](references/anti-patterns.md) for common mistakes and the cor
 2. **Where is it saved?** In the current user's config directory, not the plugin install directory; see the security reference for the exact path.
 3. **Will it survive a plugin upgrade?** Yes. The credential is stored separately from the versioned plugin cache.
 4. **Can I paste a value that already has `Bearer`?** Yes; the setup normalizes it and stores only the raw Token.
-5. **Why must I reopen Codex after saving?** New tasks must restart the stdio MCP session and read the credential.
+5. **Must I reopen Codex after saving?** Retry first: the proxy reloads credentials on authentication failure. Reopen Codex only if the current MCP process remains unavailable.
 6. **Will an authentication failure auto-retry generation?** No. Only one authentication refresh is allowed, and uncertain results are not replayed.
 
 See [deep FAQ](references/faq-deep.md) for edge cases, compatibility, commercial, and compliance questions. See [usage examples](references/examples.md) for full interaction samples.
