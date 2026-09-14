@@ -1,29 +1,29 @@
-# 反模式与改进
+# Anti-patterns and corrections
 
-## 1. 在聊天中收集 Token
+## 1. Collecting the Token in chat
 
-- 错误：要求“把 Token 发给我，我帮你配置”。
-- 改进：打开 loopback 设置页，让用户亲自在密码框保存。
+- Wrong: ask the user to send the Token to chat so the assistant can configure it.
+- Right: open the loopback setup page and let the user save the Token in the password field themselves.
 
-## 2. 把 Token 放进项目或插件配置
+## 2. Putting the Token in project or plugin configuration
 
-- 错误：在版本化配置里加入固定 Authorization 值。
-- 改进：让 `.mcp.json` 只启动 stdio 代理，凭证留在用户配置目录。
+- Wrong: hard-code a fixed Authorization value in versioned configuration.
+- Right: let `.mcp.json` only launch the stdio proxy, and keep the credential in the user config directory.
 
-## 3. 认证失败后自动重放生成
+## 3. Auto-replaying generation after an authentication failure
 
-- 错误：超时、408 或 5xx 后再次调用生成工具。
-- 改进：返回 `UNKNOWN_WRITE_RESULT`，先确认是否已经产生图表。
+- Wrong: call the generation tool again after a timeout, HTTP 408, or HTTP 5xx.
+- Right: return `UNKNOWN_WRITE_RESULT` and confirm whether the diagram was actually produced first.
 
-## 4. 用日志证明配置成功
+## 4. Using logs to prove a successful configuration
 
-- 错误：打印 Token 前后缀、长度、文件内容或完整请求头。
-- 改进：只输出 `configured`、`missing` 和安全的协议验证结果。
+- Wrong: print the Token prefix, length, file contents, or full request headers.
+- Right: emit only `configured`, `missing`, and safe protocol verification results.
 
-## 禁忌清单
+## Hard prohibitions
 
-- 不把 Token 作为命令行参数。
-- 不修改 shell profile 或系统环境变量作为默认安装步骤。
-- 不复制他人的凭证文件。
-- 不自动删除或迁移用户数据。
-- 不跟随离开官方 ProcessOn 端点的重定向。
+- Never pass the Token as a command-line argument.
+- Never edit a shell profile or system environment variable as part of the default install.
+- Never copy another user's credential file.
+- Never delete or migrate user data automatically.
+- Never follow a redirect that leaves the official ProcessOn endpoint.

@@ -1,19 +1,19 @@
-# 使用示例
+# Usage examples
 
-## 示例 1：首次使用
+## Example 1: First use
 
-- 输入：“第一次用 ProcessOn，帮我画架构图。”
-- 决策：先运行安全检查；missing 时打开本地设置页。
-- 输出：“请在刚打开的本地页面完成三步设置。Token 只在密码框输入；保存后重新打开 Codex，我再继续原架构图请求。”
+- Input: "First time using ProcessOn, please draw an architecture diagram for me."
+- Decision: run the safe availability check first; when it returns missing, open the local setup page.
+- Output: "Please finish the three-step setup on the page that just opened. Paste the Token only into the password field; once it is saved, reopen Codex and I will continue with the original architecture diagram request."
 
-## 示例 2：凭证失效
+## Example 2: Invalid credential
 
-- 输入：代理返回 `PROCESSON_AUTH_REQUIRED`。
-- 决策：生成调用停止，转入轮换，不复述上游响应。
-- 输出：“ProcessOn 凭证无效或已过期。我已打开本地更新页面；保存新 Token 并重新打开 Codex 后，再继续这次制图。”
+- Input: the proxy returns `PROCESSON_AUTH_REQUIRED`.
+- Decision: stop the generation call, enter the rotation flow, and do not repeat the upstream response.
+- Output: "The ProcessOn credential is invalid or expired. I have opened the local update page; after saving the new Token and reopening Codex, I will continue with this diagram."
 
-## 示例 3：已配置但服务暂不可用
+## Example 3: Configured but service temporarily unavailable
 
-- 输入：`check` 为 configured，但 `tools/list` 暂时失败。
-- 决策：区分凭证存在与远端连通性，不重放生成。
-- 输出：“本地凭证已配置；ProcessOn 服务连通性当前未验证。没有发起或重复生成请求，可稍后重试只读检查。”
+- Input: `check` returns configured, but `tools/list` is temporarily failing.
+- Decision: distinguish credential presence from upstream reachability, and do not replay the generation.
+- Output: "The local credential is configured; ProcessOn reachability is not verified at the moment. No generation request was issued or repeated, you can retry a read-only check later."

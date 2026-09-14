@@ -1,45 +1,45 @@
-# 设置工作流
+# Setup workflow
 
-## 状态机
+## State machine
 
 ```mermaid
 flowchart TD
-    A[运行 check] --> B{已配置?}
-    B -->|否| C[打开本地 ui]
-    C --> D[用户在密码框保存 Token]
-    D --> E[用户重新打开 Codex]
-    B -->|是| F[initialize]
+    A[Run check] --> B{Configured?}
+    B -->|No| C[Open local ui]
+    C --> D[User saves Token in password field]
+    D --> E[User reopens Codex]
+    B -->|Yes| F[initialize]
     E --> F
     F --> G[tools/list]
-    G --> H{认证有效?}
-    H -->|是| I[返回原制图流程]
-    H -->|否| C
+    G --> H{Auth valid?}
+    H -->|Yes| I[Resume original diagram flow]
+    H -->|No| C
 ```
 
-## 命令
+## Commands
 
-从已安装插件根目录执行：
+Run from the installed plugin root:
 
 ```bash
 python3 scripts/processon_setup.py check
 python3 scripts/processon_setup.py ui
 ```
 
-浏览器不可用时使用隐藏终端输入：
+When no browser is available, fall back to a hidden terminal prompt:
 
 ```bash
 python3 scripts/processon_setup.py setup
 ```
 
-`check` 只会输出 `configured` 或 `missing`。`ui` 仅监听随机 loopback 端口，十分钟后自动关闭。`setup` 使用隐藏输入，不把值放进命令历史。
+`check` outputs only `configured` or `missing`. `ui` listens on a random loopback port and shuts itself down after ten idle minutes. `setup` uses hidden input and never places the value in command history.
 
-## 异常处理
+## Exception handling
 
-| 信号 | 用户说明 | 下一步 |
+| Signal | User-facing message | Next step |
 |---|---|---|
-| missing | “当前用户尚未配置 ProcessOn，请完成本地三步设置。” | 打开 `ui` |
-| 保存失败 | “本地凭证未保存，请检查当前用户配置目录权限。” | 保留原凭证并重试设置 |
-| `PROCESSON_AUTH_REQUIRED` | “ProcessOn 凭证无效或已过期，请在本地页面更新。” | 进入轮换 |
-| MCP 暂不可用 | “凭证已配置，但服务连通性尚未验证。” | 不重复生成，稍后只读检查 |
+| missing | "ProcessOn is not configured for the current user yet. Please finish the local three-step setup." | Open `ui` |
+| Save failed | "The local credential was not saved. Please check the current user config directory permissions." | Keep the existing credential and retry setup |
+| `PROCESSON_AUTH_REQUIRED` | "The ProcessOn credential is invalid or expired. Please update it on the local page." | Enter the rotation flow |
+| MCP temporarily unavailable | "The credential is configured, but service reachability has not yet been verified." | Do not repeat generation; retry a read-only check later |
 
-不要使用“请提供更多信息”这类笼统提示。缺少什么、用户在哪里操作、完成后如何验证，都要明确列出。
+Never use vague prompts like "please provide more information". Always state what is missing, where the user should act, and how to verify after the step is done.

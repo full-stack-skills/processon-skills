@@ -1,12 +1,12 @@
-# 深度 FAQ
+# Deep FAQ
 
-1. **企业代理会影响设置页吗？** 不会。设置页只使用 loopback；访问 ProcessOn 的代理策略由运行 Codex 的环境负责。
-2. **多个系统账号能共享凭证吗？** 不应共享。每个系统用户拥有独立的受限配置。
-3. **团队可以提交一个公共 Token 吗？** 不建议，也不由本 Skill 支持；使用组织认可的凭证治理方案。
-4. **可以改用系统钥匙串吗？** 当前版本未实现；这是未来可选迁移，不应假装已经支持。
-5. **浏览器被策略禁用怎么办？** 使用 `processon_setup.py setup` 的隐藏终端输入。
-6. **Token 含 `Bearer` 前缀怎么办？** 保存时会移除一个前缀，代理发送时再添加一次。
-7. **ProcessOn 返回业务层 Token 无效怎么办？** 按认证失效处理，打开设置页轮换，不暴露原响应。
-8. **商业使用由插件授权吗？** 插件许可证不替代 ProcessOn 服务条款、套餐或内容合规要求。
-9. **如何做 CI？** 在受控任务进程提供原始 `PROCESSON_MCP_TOKEN`，不要提交到仓库或构建日志。
-10. **怎样验证升级没有丢凭证？** 升级后运行 `check`，再执行 `initialize` 和 `tools/list`；不要用生成请求做探针。
+1. **Will a corporate proxy affect the setup page?** No. The setup page only uses loopback; the proxy policy for reaching ProcessOn is handled by the environment that runs Codex.
+2. **Can multiple system accounts share a credential?** They should not. Each system user has their own restricted config.
+3. **Can a team submit a shared Token?** Not recommended and not supported by this Skill; use an organization-approved credential governance approach.
+4. **Can we switch to the system keychain?** Not implemented in the current version; that is a future optional migration and must not be claimed as supported.
+5. **The browser is blocked by policy — what now?** Use the hidden terminal input from `processon_setup.py setup`.
+6. **The Token already has a `Bearer` prefix — is that okay?** Yes; the setup strips one prefix on save and the proxy adds it back when sending.
+7. **ProcessOn reports the Token as invalid at the business layer — what now?** Treat it as an authentication failure, open the setup page for rotation, and do not echo the original response.
+8. **Does the plugin license cover commercial use?** No; the plugin license does not replace ProcessOn's terms of service, plan limits, or content compliance requirements.
+9. **How do we run this in CI?** Provide a raw `PROCESSON_MCP_TOKEN` inside a controlled child process; never commit it to the repository or build logs.
+10. **How do we confirm an upgrade did not lose the credential?** After the upgrade, run `check`, then `initialize` and `tools/list`; do not probe with a generation request.
