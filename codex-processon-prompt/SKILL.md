@@ -33,7 +33,7 @@ Omit no section, but keep each section proportional to the request. Put structur
 
 ## Accuracy and privacy
 
-- Never display or include `PROCESSON_MCP_AUTHORIZATION` or any credential in the prompt.
+- Never display or include a ProcessOn Token, authorization header, or any credential in the prompt.
 - Do not infer names, metrics, interfaces, dependencies, cardinalities, or decisions that are not supplied or safely generic.
 - Mark a reasonable structural assumption explicitly when it affects the result but does not justify blocking the request.
 - Ask one focused question only when the missing fact changes the diagram topology.

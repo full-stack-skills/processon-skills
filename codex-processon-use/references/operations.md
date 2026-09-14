@@ -4,10 +4,10 @@
 
 | Signal | User-facing response | Retry |
 |---|---|---|
-| Missing environment value | Identify `PROCESSON_MCP_AUTHORIZATION` and show the placeholder form | None |
-| 401 | Authentication is unavailable or expired | None |
+| `PROCESSON_SETUP_REQUIRED` | Open the local three-step setup page | None |
+| `PROCESSON_AUTH_REQUIRED` | Authentication is unavailable or expired; rotate locally | Authentication refresh already happened once |
 | 407 | ProcessOn rate limit was reached | At most 3 attempts with backoff |
-| Transient connection or 5xx | ProcessOn is temporarily unavailable | At most 3 attempts |
+| `UNKNOWN_WRITE_RESULT` after connection failure, 408, or 5xx | Generation may already have completed | No automatic replay |
 | Invalid input | Name the missing structural fact or correct a deterministic formatting issue | No blind retry |
 | Empty or inaccessible artifact | Preserve diagnostic metadata and request one regeneration | At most once |
 
@@ -26,7 +26,7 @@ For live acceptance, record only diagram category, result URL or non-secret ID, 
 - Directory tree presented as architecture: replace it with runtime boundaries, dependencies, protocols, and flows.
 - Decorative prompt with no topology: define entities and relationships before style.
 - Unlimited aesthetic regeneration: review once, correct specific defects once, then stop.
-- Credential embedded in `.mcp.json`: map the header to the runtime environment instead.
+- Credential embedded in `.mcp.json`: keep the installed stdio configuration secret-free and use current-user storage.
 - Claiming edit support without a returned editable artifact: state the upstream limitation.
 
 ## Deep FAQ
@@ -36,7 +36,7 @@ For live acceptance, record only diagram category, result URL or non-secret ID, 
 3. **What if the desired diagram type is unsupported?** Choose the closest documented family and disclose the mapping before generation.
 4. **What if labels are too long?** Condense them while preserving meaning; move supporting prose outside node labels.
 5. **What if the result URL is inaccessible?** Preserve non-secret metadata and perform at most one regeneration.
-6. **Can a token be saved in the repository?** No. Configure the complete authorization value in the runtime environment.
+6. **Can a token be saved in the repository?** No. Use the plugin's local setup page and current-user storage.
 7. **Can attachments be sent automatically?** No. Uploading requires explicit authorization for the files and destination.
 8. **How are multiple outputs kept consistent?** Reuse terminology, palette, shape grammar, and reading direction across the set.
 
