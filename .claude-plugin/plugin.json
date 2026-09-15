@@ -1,0 +1,20 @@
+{
+  "name": "processon-skills",
+  "version": "1.0.0",
+  "description": "ProcessOn AIGC skills — flowcharts, swimlanes, UML, architecture and ER diagrams, mind maps, structured infographics, generation prompts, and review contracts",
+  "author": {
+    "name": "AIGC Skills Community"
+  },
+  "homepage": "https://github.com/full-aigc-skills/processon-skills",
+  "repository": "https://github.com/full-aigc-skills/processon-skills",
+  "source": "./",
+  "skills": [
+    "./skills/processon-use",
+    "./skills/processon-diagram",
+    "./skills/processon-mindmap",
+    "./skills/processon-infographic",
+    "./skills/processon-prompt",
+    "./skills/processon-review",
+    "./skills/processon-setup"
+  ]
+}

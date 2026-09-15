@@ -1,11 +1,11 @@
 ---
-name: codex-processon-infographic
+name: processon-infographic
 description: Model report-ready ProcessOn infographics by matching comparison, cycle, matrix, progression, hierarchy, and radial relationships to an appropriate visual layout. Use for concise communication visuals, not technical notation or deep knowledge navigation.
 ---
 
 # Infographic Modeling
 
-Select layout from the information relationship, then build concise content and a coherent visual system for `codex-processon-prompt`.
+Select layout from the information relationship, then build concise content and a coherent visual system for `processon-prompt`.
 
 ## Relationship-to-layout map
 
@@ -30,7 +30,7 @@ The documented ProcessOn family also includes multi-column, multi-row, circular,
 4. Identify ordering, comparison axes, center relationship, or cycle direction.
 5. Remove repeated prose and decorative filler.
 6. Add a source or scope note when metrics could be misunderstood.
-7. Pass content units, relationship, layout, audience, and style to `codex-processon-prompt`.
+7. Pass content units, relationship, layout, audience, and style to `processon-prompt`.
 
 ## Visual system
 
@@ -47,7 +47,7 @@ The documented ProcessOn family also includes multi-column, multi-row, circular,
 - Do not force chronological content into a comparison or independent themes into a cycle.
 - Ask one question only if the missing audience, dimensions, or ordering changes the layout.
 - Never include credentials, private identifiers, or unrelated context in the prompt.
-- Route processes and technical notation to `codex-processon-diagram`; route deep hierarchical knowledge to `codex-processon-mindmap`.
+- Route processes and technical notation to `processon-diagram`; route deep hierarchical knowledge to `processon-mindmap`.
 
 ## Chinese starter examples
 

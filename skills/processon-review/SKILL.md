@@ -1,5 +1,5 @@
 ---
-name: codex-processon-review
+name: processon-review
 description: Review a generated ProcessOn diagram for semantic correctness, visual hierarchy, readability, layout fit, consistency, and editability. Use after generation or when the user asks to critique a ProcessOn result.
 ---
 

@@ -13,7 +13,7 @@ The local page submits user input to the same loopback service. The setup script
 
 ## Rotation and failure
 
-To rotate, run `python3 scripts/processon_setup.py ui` again, save the new value, and reopen Codex. HTTP 401 triggers exactly one local re-read; a second failure becomes `PROCESSON_AUTH_REQUIRED`. When a generation call hits a connection interruption, HTTP 408, or 5xx, the state is unknown: stop and coordinate instead of blindly replaying.
+To rotate, run `python3 scripts/processon_setup.py ui` again, save the new value, and reopen the host application. HTTP 401 triggers exactly one local re-read; a second failure becomes `PROCESSON_AUTH_REQUIRED`. When a generation call hits a connection interruption, HTTP 408, or 5xx, the state is unknown: stop and coordinate instead of blindly replaying.
 
 ## Privacy checks
 

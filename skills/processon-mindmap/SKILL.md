@@ -1,11 +1,11 @@
 ---
-name: codex-processon-mindmap
+name: processon-mindmap
 description: Convert text, documents, plans, and knowledge into a concise ProcessOn mind map, logic map, organization map, fishbone, timeline, WBS tree, or tree table. Use for hierarchical knowledge and structured understanding, not process or interaction diagrams.
 ---
 
 # Mind-Map Modeling
 
-Produce a faithful, browsable hierarchy before handing it to `codex-processon-prompt`. One node communicates one idea.
+Produce a faithful, browsable hierarchy before handing it to `processon-prompt`. One node communicates one idea.
 
 ## Structure selection
 
@@ -29,7 +29,7 @@ These identifiers are ProcessOn structure concepts, not current MCP parameters. 
 4. Condense leaf content to one short claim, fact, action, or question.
 5. Keep hierarchy continuous; do not skip levels.
 6. Prefer three to seven top-level branches unless the source requires otherwise.
-7. Pass root, branches, leaves, cross-links, selected structure, and style preference to `codex-processon-prompt`.
+7. Pass root, branches, leaves, cross-links, selected structure, and style preference to `processon-prompt`.
 
 ## Quality rules
 
@@ -50,8 +50,8 @@ Use balanced branch density, consistent depth, restrained colors by top-level br
 - Read supplied material before summarizing it; do not infer unavailable document contents.
 - Do not invent conclusions, evidence, dates, owners, or priorities.
 - Never include credentials, private local paths, or unrelated personal information.
-- If the input is a process, interaction, data schema, or runtime architecture, route to `codex-processon-diagram` instead.
-- If the goal is a report-ready comparison or visual story rather than knowledge navigation, route to `codex-processon-infographic`.
+- If the input is a process, interaction, data schema, or runtime architecture, route to `processon-diagram` instead.
+- If the goal is a report-ready comparison or visual story rather than knowledge navigation, route to `processon-infographic`.
 
 ## Chinese starter examples
 

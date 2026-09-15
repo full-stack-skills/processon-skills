@@ -1,6 +1,6 @@
 # Deep FAQ
 
-1. **Will a corporate proxy affect the setup page?** No. The setup page only uses loopback; the proxy policy for reaching ProcessOn is handled by the environment that runs Codex.
+1. **Will a corporate proxy affect the setup page?** No. The setup page only uses loopback; the proxy policy for reaching ProcessOn is handled by the host application's environment.
 2. **Can multiple system accounts share a credential?** They should not. Each system user has their own restricted config.
 3. **Can a team submit a shared Token?** Not recommended and not supported by this Skill; use an organization-approved credential governance approach.
 4. **Can we switch to the system keychain?** Not implemented in the current version; that is a future optional migration and must not be claimed as supported.

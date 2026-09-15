@@ -1,5 +1,5 @@
 ---
-name: codex-processon-prompt
+name: processon-prompt
 description: Convert an approved diagram structure into a precise ProcessOn generation prompt with layout and visual-system constraints. Use immediately before ProcessOn MCP generation; do not use to invent missing business facts.
 ---
 
@@ -41,4 +41,4 @@ Omit no section, but keep each section proportional to the request. Put structur
 
 ## Handoff
 
-Return only the final six-section prompt to `codex-processon-use`. Do not call MCP tools directly and do not review the result; those responsibilities belong to the router and `codex-processon-review`.
+Return only the final six-section prompt to `processon-use`. Do not call MCP tools directly and do not review the result; those responsibilities belong to the router and `processon-review`.

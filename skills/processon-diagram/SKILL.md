@@ -1,11 +1,11 @@
 ---
-name: codex-processon-diagram
+name: processon-diagram
 description: Model professional ProcessOn flowcharts, swimlanes, UML and sequence diagrams, architecture and ER diagrams, organization and equity charts, timelines, and business-analysis diagrams. Use after the ProcessOn router selects a professional diagram rather than a mind map or infographic.
 ---
 
 # Professional Diagram Modeling
 
-Turn user facts into a topology that `codex-processon-prompt` can express precisely. Focus on relationships and runtime meaning, not decoration.
+Turn user facts into a topology that `processon-prompt` can express precisely. Focus on relationships and runtime meaning, not decoration.
 
 ## Select the diagram family
 
@@ -31,7 +31,7 @@ Honor an explicit family unless it cannot represent the requested relationship. 
 3. Define every meaningful relationship and its direction or label.
 4. Separate the primary path from exceptions, optional flows, and annotations.
 5. Choose orientation and grouping from the topology.
-6. Pass the structure to `codex-processon-prompt`.
+6. Pass the structure to `processon-prompt`.
 
 ## Family-specific rules
 
