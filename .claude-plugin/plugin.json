@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "ProcessOn AIGC skills — flowcharts, swimlanes, UML, architecture and ER diagrams, mind maps, structured infographics, generation prompts, and review contracts",
   "author": {
-    "name": "AIGC Skills Community"
+    "name": "PartMe.AI",
+    "email": "partmeai@gmail.com"
   },
-  "homepage": "https://github.com/full-aigc-skills/processon-skills",
-  "repository": "https://github.com/full-aigc-skills/processon-skills",
+  "homepage": "https://github.com/full-stack-skills/processon-skills",
+  "repository": "https://github.com/full-stack-skills/processon-skills",
   "source": "./",
   "skills": [
     "./skills/processon-use",

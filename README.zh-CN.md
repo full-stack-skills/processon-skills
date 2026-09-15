@@ -4,7 +4,7 @@
 
 **ProcessOn AIGC 技能 — 流程图、泳道图、UML、架构图、ER 图、思维导图、结构化信息图、生成提示词与审阅契约**
 
-[![GitHub](https://img.shields.io/badge/github-full--aigc--skills%2Fprocesson--skills-green.svg)](https://github.com/full-aigc-skills/processon-skills)
+[![GitHub](https://img.shields.io/badge/github-full--stack--skills%2Fprocesson--skills-green.svg)](https://github.com/full-stack-skills/processon-skills)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-兼容-purple.svg)](https://agentskills.io)
 
@@ -16,12 +16,12 @@
 
 ## 📖 简介
 
-**processon-skills** 是一组 AI 编码智能体技能，属于 [Full AIGC Skills](https://github.com/full-aigc-skills) 生态。包含 **7 个技能**，覆盖"分类 → 建模 → 提示词 → 生成 → 审阅 → 交付"的完整 ProcessOn 制图工作流，经官方 ProcessOn MCP 产出**可编辑**的图形结果。
+**processon-skills** 是一组 AI 编码智能体技能，属于 [Full Stack Skills](https://github.com/full-stack-skills) 生态。包含 **7 个技能**，覆盖"分类 → 建模 → 提示词 → 生成 → 审阅 → 交付"的完整 ProcessOn 制图工作流，经官方 ProcessOn MCP 产出**可编辑**的图形结果。
 
 ## 📦 安装
 
 ```bash
-npx skills add full-aigc-skills/processon-skills
+npx skills add full-stack-skills/processon-skills
 ```
 
 ## 🎯 技能列表 (7)
@@ -45,13 +45,13 @@ npx skills add full-aigc-skills/processon-skills
 **方式一：npx skills CLI（推荐）**
 
 ```bash
-npx skills add full-aigc-skills/processon-skills
+npx skills add full-stack-skills/processon-skills
 ```
 
 **方式二：手动安装**
 
 ```bash
-git clone https://github.com/full-aigc-skills/processon-skills.git
+git clone https://github.com/full-stack-skills/processon-skills.git
 cp -r processon-skills/skills/* .claude/skills/
 ```
 

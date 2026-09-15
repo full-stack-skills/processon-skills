@@ -4,7 +4,7 @@
 
 **ProcessOn AIGC skills — flowcharts, swimlanes, UML, architecture & ER diagrams, mind maps, structured infographics, generation prompts, and review contracts**
 
-[![GitHub](https://img.shields.io/badge/github-full--aigc--skills%2Fprocesson--skills-green.svg)](https://github.com/full-aigc-skills/processon-skills)
+[![GitHub](https://img.shields.io/badge/github-full--stack--skills%2Fprocesson--skills-green.svg)](https://github.com/full-stack-skills/processon-skills)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-compatible-purple.svg)](https://agentskills.io)
 
@@ -16,12 +16,12 @@ English | [简体中文](./README.zh-CN.md)
 
 ## 📖 Overview
 
-**processon-skills** is a set of AI coding-agent skills in the [Full AIGC Skills](https://github.com/full-aigc-skills) ecosystem, with **7 skills** covering the full ProcessOn diagramming workflow — classify → model → prompt → generate → review → deliver — producing **editable** diagrams through the official ProcessOn MCP server.
+**processon-skills** is a set of AI coding-agent skills in the [Full Stack Skills](https://github.com/full-stack-skills) ecosystem, with **7 skills** covering the full ProcessOn diagramming workflow — classify → model → prompt → generate → review → deliver — producing **editable** diagrams through the official ProcessOn MCP server.
 
 ## 📦 Installation
 
 ```bash
-npx skills add full-aigc-skills/processon-skills
+npx skills add full-stack-skills/processon-skills
 ```
 
 ## 🎯 Skills (7)
@@ -45,13 +45,13 @@ Works with [Claude Code](https://code.claude.com), [Codex](https://developers.op
 **Option 1: npx skills CLI (recommended)**
 
 ```bash
-npx skills add full-aigc-skills/processon-skills
+npx skills add full-stack-skills/processon-skills
 ```
 
 **Option 2: manual**
 
 ```bash
-git clone https://github.com/full-aigc-skills/processon-skills.git
+git clone https://github.com/full-stack-skills/processon-skills.git
 cp -r processon-skills/skills/* .claude/skills/
 ```
 
