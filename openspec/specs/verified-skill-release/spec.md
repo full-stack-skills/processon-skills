@@ -1,7 +1,7 @@
 # verified-skill-release Specification
 
 ## Purpose
-确保每个技能包在正式发布前达到可验证质量，并让消费插件只基于不可变 release 身份执行升级。
+确保每个技能包在正式发布前达到可重复验证的结构、引用与 TRACE 质量标准，并让消费插件只基于不可变的 tag、peeled commit SHA 和 GitHub Release 身份执行受审查升级；凭据或通知失败必须保留明确证据，不能伪造成发布成功。
 ## Requirements
 ### Requirement: Skill changes pass deterministic quality gates
 技能内容变更 MUST 通过结构校验、断链检查和确定性 TRACE 评估；发布门禁 MUST 在任一技能低于规定阈值时失败。
@@ -38,4 +38,3 @@
 #### Scenario: User installs one skill
 - **WHEN** 用户使用 `npx skills add ... --skill <name>` 仅安装该技能
 - **THEN** 技能引用的本地文档、示例和脚本均可解析
-
