@@ -13,7 +13,12 @@
 
 ## 3. Publication
 
-- [ ] 3.1 Validate and archive the OpenSpec change
-- [ ] 3.2 Commit and push the skill package, then confirm CI
-- [ ] 3.3 Create a new immutable tag and GitHub Release
-- [ ] 3.4 Confirm consumer dispatch or record the exact secret-visibility blocker
+- [x] 3.1 Validate and archive the OpenSpec change
+- [x] 3.2 Commit and push the skill package, then confirm CI
+- [x] 3.3 Create immutable tag and GitHub Release `v1.0.2`
+- [x] 3.4 Confirm consumer dispatch or record the exact secret-visibility blocker
+
+> Blocked evidence: release run `35472192266` resolved `v1.0.2` but received an
+> empty `SKILLS_SYNC_TOKEN` in the workflow environment and failed before
+> dispatch. Tag and Release point to
+> `8f2e5a7f2a1bd74f1db76a91ec8b621b60181ac0`.
