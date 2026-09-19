@@ -59,7 +59,7 @@ cp -r processon-skills/skills/* .claude/skills/
 
 The skills are host-agnostic. Known consumers:
 
-- [codex-processon-plugin](https://github.com/partme-ai/codex-processon-plugin) (Codex plugin; vendors this package via `skills.lock.json`)
+- [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin) (Codex, ZCode, and Kimi plugin; vendors this package via `skills.lock.json`)
 - The WorkBuddy ProcessOn team ([workbuddy-agent-experts](https://github.com/partme-ai/workbuddy-agent-experts), vendored at build time)
 
 <!-- FULL_STACK_DOC_START -->

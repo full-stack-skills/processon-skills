@@ -59,7 +59,7 @@ cp -r processon-skills/skills/* .claude/skills/
 
 技能本体与宿主无关。已知消费方：
 
-- [codex-processon-plugin](https://github.com/partme-ai/codex-processon-plugin)（Codex 插件，经 `skills.lock.json` vendor 本包）
+- [processon-design-plugin](https://github.com/full-stack-plugins/processon-design-plugin)（Codex、ZCode、Kimi 多宿主插件，经 `skills.lock.json` vendor 本包）
 - WorkBuddy ProcessOn 团队（[workbuddy-agent-experts](https://github.com/partme-ai/workbuddy-agent-experts)，构建期 vendor）
 
 <!-- FULL_STACK_DOC_START -->

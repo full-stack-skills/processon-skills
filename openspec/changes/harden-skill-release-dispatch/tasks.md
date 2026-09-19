@@ -3,6 +3,7 @@
 - [x] 1.1 Repair broken or non-granular skill references in the source package
 - [x] 1.2 Add deterministic structure, link and TRACE gates with a 4.5 threshold
 - [x] 1.3 Verify every skill and preserve generated evaluation evidence
+- [x] 1.4 Replace the obsolete Codex-only consumer identity in both READMEs
 
 ## 2. Release dispatch
 

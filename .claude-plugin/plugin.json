@@ -1,6 +1,6 @@
 {
   "name": "processon-skills",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ProcessOn AIGC skills — flowcharts, swimlanes, UML, architecture and ER diagrams, mind maps, structured infographics, generation prompts, and review contracts",
   "author": {
     "name": "PartMe.AI",

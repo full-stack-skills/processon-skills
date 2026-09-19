@@ -8,6 +8,7 @@
 - 正式 release 发布后，计算 tag 的 peeled commit SHA 并通知实际消费插件。
 - dispatch payload 明确携带技能包、tag 和 commit；通知失败必须显式失败。
 - 修复影响独立安装的断链或缺失资源，并发布新的不可变版本。
+- 移除 README 中过时的 Codex-only 插件仓库身份，改为当前三宿主插件。
 
 ## Capabilities
 
