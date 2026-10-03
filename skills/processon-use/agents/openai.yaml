@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProcessOn Use"
+  short_description: "Route requests to create or revise ProcessOn diagrams, mind…"
+  default_prompt: "Use $processon-use to help with my current task: Route requests to create or revise ProcessOn diagrams, mind maps, and infographics through the official ProcessOn MCP server."

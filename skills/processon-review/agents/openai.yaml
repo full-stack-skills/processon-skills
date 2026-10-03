@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProcessOn Review"
+  short_description: "Review a generated ProcessOn diagram for semantic correctness…"
+  default_prompt: "Use $processon-review to help with my current task: Review a generated ProcessOn diagram for semantic correctness, visual hierarchy, readability, layout fit, consistency, and editability."

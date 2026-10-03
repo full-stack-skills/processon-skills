@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProcessOn Infographic"
+  short_description: "Model report-ready ProcessOn infographics by matching…"
+  default_prompt: "Use $processon-infographic to help with my current task: Model report-ready ProcessOn infographics by matching comparison, cycle, matrix, progression, hierarchy, and radial relationships to an appropriate visual layout."

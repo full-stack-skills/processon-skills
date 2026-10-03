@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProcessOn Mindmap"
+  short_description: "Convert text, documents, plans, and knowledge into a concise…"
+  default_prompt: "Use $processon-mindmap to help with my current task: Convert text, documents, plans, and knowledge into a concise ProcessOn mind map, logic map, organization map, fishbone, timeline, WBS tree, or tree table."

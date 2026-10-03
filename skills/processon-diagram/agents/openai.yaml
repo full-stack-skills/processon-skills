@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProcessOn Diagram"
+  short_description: "Model professional ProcessOn flowcharts, swimlanes, UML and…"
+  default_prompt: "Use $processon-diagram to help with my current task: Model professional ProcessOn flowcharts, swimlanes, UML and sequence diagrams, architecture and ER diagrams, organization and equity charts, timelines, and business-analysis…"

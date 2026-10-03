@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProcessOn Setup"
+  short_description: "Configure or rotate the local ProcessOn Token for a ProcessOn…"
+  default_prompt: "Use $processon-setup to help with my current task: Configure or rotate the local ProcessOn Token for a ProcessOn MCP integration."

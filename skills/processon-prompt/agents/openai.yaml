@@ -1,0 +1,4 @@
+interface:
+  display_name: "ProcessOn Prompt"
+  short_description: "Convert an approved diagram structure into a precise ProcessOn…"
+  default_prompt: "Use $processon-prompt to help with my current task: Convert an approved diagram structure into a precise ProcessOn generation prompt with layout and visual-system constraints."
